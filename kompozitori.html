@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./material/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lobster&display=swap" rel="stylesheet">
+    <title>Viva La Musica</title>
+</head>
+<body>
+    <nav class="navbar container-fluid bg-primary navbar-expand-sm sticky-top" id="mainNavbar">
+        <ul class="nav container-fluid justify-content-between px-lg-4 text-white">
+            <li class="nav-item">
+                <img id="logo" src="./material/Pictures/VIVA LA MUSICA LOGO.png" alt="Image Not Loaded"">
+            </li>
+            <li class="nav-item">
+                <a href="./index.html">
+                    <p name="sr" class="m-0">Glavna strana</p>
+                    <p name="en" class="m-0">Main page</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./oNama.html">
+                    <p name="sr" class="m-0">O nama</p>
+                    <p name="en" class="m-0">About us</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./nauciteNote.html">
+                    <p name="sr" class="m-0">Naučite note</p>
+                    <p name="en" class="m-0">Learn music notes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./kompozitori.html">
+                    <p name="sr" class="m-0">Kompozitori</p>
+                    <p name="en" class="m-0">Composers</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./kontakt.html">
+                    <p name="sr" class="m-0">Kontakt</p>
+                    <p name="en" class="m-0">Contact</p>
+                </a>
+            </li>
+            <li class="nav-item" name="toLogIn">
+                <p name="sr" class="m-0 cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Prijava</p>
+                <p name="en" class="m-0 cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Log in</p>
+            </li>
+            <li class="nav-item" name="loggedIn">
+                <p name="sr" class="m-0 cursor-pointer" onclick="logOut()">Odjava</p>
+                <p name="en" class="m-0 cursor-pointer" onclick="logOut()">Log out</p>
+            </li>
+        </ul>
+    </nav>
+    <nav class="dropdown container-fluid bg-primary sticky-top" id="dropdownNavbar">
+        <button class="btn bg-primary dropdown-toggle w-100" type="button" id="dropdownNabar" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img id="logo" src="./material/Pictures/VIVA LA MUSICA LOGO.png" alt="Image Not Loaded">
+        </button>
+        <ul class="dropdown-menu container-fluid justify-content-center align-items-center text-center bg-primary px-lg-4" aria-labelledby="dropdownNabar">
+            <li class="dropdown-item">
+                <a href="./index.html">
+                    <p name="sr" class="m-0">Glavna strana</p>
+                    <p name="en" class="m-0">Main page</p>
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a href="./oNama.html">
+                    <p name="sr" class="m-0">O nama</p>
+                    <p name="en" class="m-0">About us</p>
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a href="./nauciteNote.html">
+                    <p name="sr" class="m-0">Naučite note</p>
+                    <p name="en" class="m-0">Learn music notes</p>
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a href="./kompozitori.html">
+                    <p name="sr" class="m-0">Kompozitori</p>
+                    <p name="en" class="m-0">Composers</p>
+                </a>
+            </li>
+            <li class="dropdown-item">
+                <a href="./kontakt.html">
+                    <p name="sr" class="m-0">Kontakt</p>
+                    <p name="en" class="m-0">Contact</p>
+                </a>
+            </li>
+            <li class="dropdown-item" name="toLogIn">
+                <p name="sr" class="m-0 cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Prijava</p>
+                <p name="en" class="m-0 cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Log in</p>
+            </li>
+            <li class="dropdown-item" name="loggedIn">
+                <p name="sr" class="m-0 cursor-pointer" onclick="logOut()">Odjava</p>
+                <p name="en" class="m-0 cursor-pointer" onclick="logOut()">Log out</p>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid d-flex justify-content-end align-items-center p-2">
+        <h6 class="m-0 pe-2">SRB/ENG</h6>
+        <label class="switch ">
+            <input type="checkbox" class="default" onclick="changeLanguage()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="container-fluid w-75" id="mainComposerContainer"></div>
+    <div class="container-fluid d-flex bg-dark text-white flex-column">
+        <div class="container-fluid d-flex justify-content-around align-items-center">
+            <h5 name="sr" class="m-0 p-2">Prijavite se ili se registrujte kako bi pristupili kompletnom sajtu i dobijali vesti o budućim novostima, nadamo se da će te uživati u novopronađenoj umetnosti:</h5>
+            <h5 name="en" class="m-0 p-2">Sign in or register to access the full site and receive news of future updates, we hope you enjoy the newfound art:</h5>
+            <button class="border-0 bg-white rounded-5 p-2 m-2" data-bs-toggle="modal" data-bs-target="#logInModal">
+                <h3 name="sr" class="m-0 cursor-pointer">Prijava</h3>
+                <h3 name="en" class="m-0 cursor-pointer">Log in</g3>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="container-fluid d-flex h">
+            <div class="container-fluid d-flex flex-column justify-content-center">
+                <p name="sr" class="m-0">Zapratite nas na:</p>
+                <p name="en" class="m-0">Follow us on:</p>
+                <ul class="list-unstyled lh-lg">
+                    <li><a href="https://www.x.com/">-X</a></li>
+                    <li><a href="https://www.facebook.com/">-Facebook</a></li>
+                    <li><a href="https://www.youtube.com/">-YouTube</a></li>
+                    <li><a href="https://bsky.app/">-Bluesky</a></li>
+                    <li><a href="https://www.instagram.com/">-Instagram</a></li>
+                </ul>
+            </div>
+            <div class="align-self-end text-end d-flex flex-column">
+                <a href="./kontakt.html">
+                    <p name="sr">Kontaktirajte nas</p>
+                    <p name="en">Contact us</p>
+                </a>
+                <p name="sr">Državni univerzitet u Novom Pazaru</p>
+                <p name="en">State university of Novi Pazar</p>
+                <p>Vuka Karadžića BB</p>
+                <br>
+                <p name="sr">Uslovi korišćenja i prava</p>
+                <p name="en">Terms of use and rights</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="logInModal" aria-hidden="true" aria-labelledby="logInModalLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center flex-column border-0 bg-primary">
+                    <div class="container-fluid d-flex justify-content-end">
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h1 name="sr" class="text-dark modal-title" id="logInModalLabel">Prijava</h1>
+                    <h1 name="en" class="text-dark">Log in</h1>
+                </div>
+                <div class="modal-body bg-primary">
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                        <label for="logInEmailInput" class="w-75 d-flex justify-content-start form-label">Email</label>
+                        <input type="email" name="logInEmailInput" id="logInEmailInput" class="w-75 p-2 rounded-3 border-0">
+                        <label for="logInPasswordInput" class="w-75 d-flex justify-content-start form-label">
+                            <p name="sr" class="w-auto m-0">Lozinka</p>
+                            <p name="en" class="w-auto m-0">Password</p>
+                        </label>
+                        <input type="password" name="logInPasswordInput" id="logInPasswordInput" class="w-75 p-2 rounded-3 border-0">
+                    </div>
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                        <p name="sr" class="text-info cursor-pointer" data-bs-toggle="modal" data-bs-target="#registerModal">Nemate nalog? Registrujte se</p>
+                        <p name="en" class="text-info cursor-pointer" data-bs-toggle="modal" data-bs-target="#registerModal">Don't have an account? Register</p>
+                        <p name="sr" class="text-info cursor-pointer" onclick="forgotPassword()">Zaboravio/la sam lozinku</p>
+                        <p name="en" class="text-info cursor-pointer" onclick="forgotPassword()">I forgot the password</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-primary d-flex justify-content-center border-0">
+                    <button type="submit" class="w-auto bg-secondary border-0 rounded-5 h-auto p-3" onclick="logIn()" data-bs-dismiss="modal">
+                        <h3 name="sr" class="text-white m-0">Prijavte se</h3>
+                        <h3 name="en" class="text-white m-0">Log in</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" aria-hidden="true" aria-labelledby="registerModalLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center flex-column border-0 bg-primary">
+                    <div class="container-fluid d-flex justify-content-end">
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h1 name="sr" class="text-dark">Registracija</h1>
+                    <h1 name="en" class="text-dark">Registration</h1>
+                </div>
+                <div class="modal-body bg-primary">
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                        <label for="registerEmailInput" class="w-75 d-flex justify-content-start">Email</label>
+                        <input type="email" name="registerEmailInput" id="registerEmailInput" class="w-75 p-2 rounded-3 border-0">
+                        <label for="registerPasswordInput" class="w-75 d-flex justify-content-start">
+                            <p name="sr" class="w-auto m-0">Lozinka</p>
+                            <p name="en" class="w-auto m-0">Passowrd</p>
+                        </label>
+                        <input type="password" name="registerPasswordInput" id="registerPasswordInput" class="w-75 p-2 rounded-3 border-0">
+                        <label for="registerPasswordInputConfirm" class="w-75 d-flex justify-content-start">
+                            <p name="sr" class="w-auto m-0">Ponovite lozinku</p>
+                            <p name="en" class="w-auto m-0">Repeat password</p>
+                        </label>
+                        <input type="password" name="registerPasswordInputConfirm" id="registerPasswordInputConfirm" class="w-75 p-2 rounded-3 border-0">
+                    </div>
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                        <p name="sr" class="text-info cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Imate nalog? Prijavite se</p>
+                        <p name="en" class="text-info cursor-pointer" data-bs-toggle="modal" data-bs-target="#logInModal">Already have an account? Log in</p>
+                        <p name="sr" class="text-info cursor-pointer" onclick="forgotPassword()">Zaboravio/la sam lozinku</p>
+                        <p name="en" class="text-info cursor-pointer" onclick="forgotPassword()">I forgot the password</p>
+                    </div>
+                </div>
+                <div class="modal-footer bg-primary d-flex justify-content-center border-0">
+                    <button type="submit" class="w-auto bg-secondary border-0 rounded-5 h-auto p-3" onclick="registration()" data-bs-dismiss="modal">
+                        <h3 name="sr" class="text-white m-0">Registrujte se</h3>
+                        <h3 name="en" class="text-white m-0">Register</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./index.js"></script>
+<script src="./material/js/bootstrap.bundle.js"></script>
+</body>
+</html>
